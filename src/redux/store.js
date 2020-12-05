@@ -1,5 +1,11 @@
-import { createStore } from "redux";
+import { applyMiddleware, createStore } from "redux";
+import createSagaMiddleware from "redux-saga";
 import gitHubUserReducer from "./reducers/reducer";
+import fetchUserProjectsInfo from "./sagas";
 
-const store = createStore(gitHubUserReducer);
+const sagaMiddleware = createSagaMiddleware();
+
+const store = createStore(gitHubUserReducer, applyMiddleware(sagaMiddleware));
+
+sagaMiddleware.run(fetchUserProjectsInfo);
 export default store;

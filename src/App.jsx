@@ -2,7 +2,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import "./App.scss";
-import LinkInput from "./components/LoginInput";
+import UserFinderBlock from "./components/UserFinderBlock";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
           <h2 className="App__header__title"> Git People Finder </h2>
         </header>
         <main className="App__main">
-          <LinkInput />
+          <UserFinderBlock />
         </main>
         <footer className="App__footer" />
       </div>

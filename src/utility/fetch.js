@@ -1,29 +1,32 @@
 import token from "./token";
 
-// async function addNewMembersData(arrayForNewData) {
-//   const result = await Promise.all(
-//     arrayForNewData.map(async (el) => {
-//       const newElement = await fetchPersonalData(el);
-//       return await newElement;
-//     })
-//   );
+export async function fetchProjects(url) {
+  const fiveProjects = await fetch(
+    `${url}?sort=updated&direction=desc&per_page=5&page=1`,
+    {
+      headers: {
+        Authorization: `token ${token}`,
+      },
+    },
+  );
+  const fiveProjectsJSON = await fiveProjects.json();
+  const projectsWithCommits = await fetchProjectCommits(fiveProjectsJSON);
+  return projectsWithCommits;
+}
 
-//   return result;
-// }
-export async function fetchAllPages(url, startPage = 1) {
-  let result = [];
-  let currentPage = startPage;
-  let morePagesAvailable = true;
-
-  while (morePagesAvailable) {
-    const response = getJSON(`${url}?page=${currentPage}`);
-    const data = response;
-    result = [...result, ...data];
-    currentPage += 1;
-    morePagesAvailable = data.length > 0;
-  }
-
+export async function fetchProjectCommits(arrayOfProjects) {
+  const result = await Promise.all(
+    arrayOfProjects.map(async (el) => fetchCommitUrls(el)),
+  );
   return result;
+}
+
+export async function fetchCommitUrls(project) {
+  const response = await getJSON(
+    `${project.url}/commits?sort=updated&direction=desc&per_page=3`,
+  );
+  const listOfCommits = await response.map((el) => el.html_url);
+  return { ...project, listOfCommits };
 }
 
 export function getJSON(url) {
