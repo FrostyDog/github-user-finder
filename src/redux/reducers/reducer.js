@@ -1,11 +1,11 @@
 const initialState = {
-  currentUser: {},
+  userNameObject: {},
 };
 
 const gitHubUserReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "newUser":
-      return { ...state, currentUser: action.payload };
+    case "newuserNameObject":
+      return { ...state, userNameObject: action.payload };
     default:
       return state;
   }
