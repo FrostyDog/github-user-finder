@@ -25,7 +25,7 @@ export async function fetchCommitUrls(project) {
   const response = await getJSON(
     `${project.url}/commits?sort=updated&direction=desc&per_page=3`,
   );
-  const listOfCommits = await response.map((el) => el.html_url);
+  const listOfCommits = await response.map((el) => el); // or el.html_url fetching specific data;
   return { ...project, listOfCommits };
 }
 
