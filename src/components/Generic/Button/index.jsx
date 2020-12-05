@@ -2,9 +2,14 @@
 import React from "react";
 import "./style.scss";
 
-function Button({ onSubmit }) {
+function Button({ onSubmit, buttonState }) {
   return (
-    <button type="button" onClick={onSubmit} className="Button">
+    <button
+      type="button"
+      disabled={buttonState}
+      onClick={onSubmit}
+      className="Button"
+    >
       {" "}
       Szukaj użytkownika
     </button>

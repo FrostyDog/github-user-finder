@@ -7,6 +7,7 @@ import { getJSON } from "../../utility/fetch";
 function LoginInput() {
   const [login, setLogin] = React.useState("");
   const dispatch = useDispatch();
+  const [buttonDisabled, setButtonDisabled] = React.useState(true);
 
   const changeHanle = (event) => {
     setLogin(event.target.value);
@@ -25,6 +26,14 @@ function LoginInput() {
       });
   };
 
+  React.useEffect(() => {
+    if (login.length > 0) {
+      setButtonDisabled(false);
+    } else {
+      setButtonDisabled(true);
+    }
+  }, [login]);
+
   return (
     <div className="LoginInput">
       <label htmlFor="input-field" className="LoginInput__label">
@@ -39,7 +48,11 @@ function LoginInput() {
         className="LoginInput__input"
       />
 
-      <Button className="LoginInput__button" onSubmit={submitChange} />
+      <Button
+        className="LoginInput__button"
+        buttonState={buttonDisabled}
+        onSubmit={submitChange}
+      />
     </div>
   );
 }
