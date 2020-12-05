@@ -9,12 +9,10 @@ function LoginInput() {
   const dispatch = useDispatch();
 
   const changeHanle = (event) => {
-    console.log(login);
     setLogin(event.target.value);
   };
 
   const submitChange = () => {
-    console.log("login");
     getJSON(`https://api.github.com/users/${login}`)
       .then((res) => {
         dispatch({ type: "newUserNameObject", payload: res });
