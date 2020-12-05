@@ -7,11 +7,11 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <header />
-        <div className="main-wrapper">
-          <main />
-        </div>
-        <footer />
+        <header className="App__header">
+          <h2 className="App__header__title"> Git People Finder </h2>
+        </header>
+        <main className="App__main">{/* something here */}</main>
+        <footer className="App__footer" />
       </div>
     </Provider>
   );
