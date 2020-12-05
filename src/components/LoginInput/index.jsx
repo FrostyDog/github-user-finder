@@ -18,7 +18,10 @@ function LoginInput() {
         dispatch({ type: "newUserNameObject", payload: res });
       })
       .catch(() => {
-        console.log("cathcing eeror with catch");
+        dispatch({ type: "newAlert", payload: " Użytkownika nie istnieje" });
+        setTimeout(() => {
+          dispatch({ type: "hideAlert" });
+        }, 3000);
       });
   };
 
