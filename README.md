@@ -10,8 +10,8 @@ React + Redux + Redux Saga was used to create application. No design framework w
 [Deployed Version](https://github-user-finder-five.vercel.app)
 
 ### Setting up
-
-    Project is using npm so you can fully run it locally with the
+Project is using npm so you can fully run it locally with the
+    
     ```
     npm start
     ```
