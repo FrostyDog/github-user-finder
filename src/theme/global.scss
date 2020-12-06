@@ -1,17 +1,18 @@
 // Global variables
-$mainColor: #2f7add;
-$grayBackground: #eef4fd;
-$textBlue: #3d83df;
-
 
 // Global Style CSS
+html {
+  @media screen and (max-width: 460px) {
+    font-size: 11.5px;
+  }
+}
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "Roboto", sans-serif;
 }
 
 * {
   box-sizing: border-box;
 }
-

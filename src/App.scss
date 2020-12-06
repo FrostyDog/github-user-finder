@@ -1,11 +1,14 @@
 .App {
   &__header {
-    background-color: #eef4fd;
+    background-color: #3498db;
     padding: 20px 10px;
-    font-family: "Roboto", sans-serif;
+    &__title{
+      text-align: center;
+      color:white;
+    }
   }
   &__main {
-    max-width: 30%;
+    max-width: 90%;
     margin: 0 auto;
     margin-top: 10%;
     margin-bottom: 10%;

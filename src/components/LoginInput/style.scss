@@ -1,0 +1,18 @@
+.LoginInput {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  &__label {
+    margin: 10px 0 5px 0;
+    color: gray;
+    font-weight: bold;
+    text-transform: lowercase;
+  }
+  &__input {
+    margin: 5px 0 20px 0;
+    border: 2px rgb(233, 225, 215) solid;
+    border-radius: 4px;
+    font-size: 1.0em;
+    padding: 6px;
+  }
+}

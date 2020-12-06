@@ -1,13 +1,9 @@
+/* eslint react/prop-types: 0 */
 import React from "react";
 import "./style.scss";
 
-function ComponentsName() {
-    
-
-  return (
-    <div className="ComponentsName">
-    </div>
-  );
+function CommitListItem({ commit }) {
+  return <a className="CommitListItem" href={commit.url}>{commit.sha}</a>;
 }
 
-export default ComponentsName;
+export default CommitListItem;

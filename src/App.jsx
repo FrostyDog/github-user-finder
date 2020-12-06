@@ -9,7 +9,7 @@ function App() {
     <Provider store={store}>
       <div className="App">
         <header className="App__header">
-          <h2 className="App__header__title"> Git People Finder </h2>
+          <h1 className="App__header__title"> GitHub People Finder </h1>
         </header>
         <main className="App__main">
           <UserFinderBlock />

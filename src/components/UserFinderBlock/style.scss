@@ -1,4 +1,23 @@
 .UserFinderBlock {
-    display: flex;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 5%;
+  min-height: 70vh;
+  @media screen and (max-width: 1000px) {
     flex-direction: column;
+    align-items: center;
+  }
+  &__user-block {
+    width: 50%;
+    padding: 0 2rem;
+    @media screen and (max-width: 1000px) {
+      width: auto;
+    }
+  }
+  &__projects-block {
+    width: 50%;
+    @media screen and (max-width: 1000px) {
+      width: auto;
+    }
+  }
 }

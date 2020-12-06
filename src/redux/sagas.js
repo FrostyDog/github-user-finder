@@ -6,6 +6,14 @@ export default function* sagaWatcher() {
 }
 
 function* fetchUserProjectsInfo(action) {
+  yield put({
+    type: "newProjectsWithCommits",
+    payload: [],
+  });
+  yield put({
+    type: "hideAlert",
+  });
+
   const projectListWithCommits = yield call(
     fetchProjects,
     action.payload.repos_url,

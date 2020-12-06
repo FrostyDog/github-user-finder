@@ -38,7 +38,7 @@ function LoginInput() {
     <div className="LoginInput">
       <label htmlFor="input-field" className="LoginInput__label">
         {" "}
-        Wpisz login tutaj
+        Wpisz username tutaj
       </label>
       <input
         name="input-field"
@@ -48,11 +48,7 @@ function LoginInput() {
         className="LoginInput__input"
       />
 
-      <Button
-        className="LoginInput__button"
-        buttonState={buttonDisabled}
-        onSubmit={submitChange}
-      />
+      <Button buttonState={buttonDisabled} onSubmit={submitChange} />
     </div>
   );
 }
