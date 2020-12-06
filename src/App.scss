@@ -2,28 +2,33 @@
   &__header {
     background-color: #3498db;
     padding: 20px 10px;
-    &__title{
+
+    &__title {
       text-align: center;
-      color:white;
+      color: white;
     }
   }
   &__main {
     max-width: 90%;
     margin: 0 auto;
-    margin-top: 10%;
-    margin-bottom: 10%;
+    margin-top: 0%;
+    margin-bottom: 0%;
     background-color: #eef4fd;
-    padding: 20px 10px;
+    padding: 30px 10px;
     @media screen and (min-width: 1300px) {
       max-width: 65%;
+      margin-top: 5%;
+      margin-bottom: 5%;
     }
     @media screen and (min-width: 960px) {
       max-width: 80%;
     }
+    @media screen and (max-width: 350px) {
+      max-width: 100%;
+    }
   }
   &__footer {
-    background-color: #fff;
-    min-height: 20vh;
-    min-height: 50px;
+    background-color: #3498db;
+    min-height: 100px;
   }
 }

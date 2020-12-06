@@ -48,7 +48,11 @@ function LoginInput() {
         className="LoginInput__input"
       />
 
-      <Button buttonState={buttonDisabled} onSubmit={submitChange} />
+      <Button
+        buttonState={buttonDisabled}
+        text="Szukaj użytkownika"
+        onSubmit={submitChange}
+      />
     </div>
   );
 }

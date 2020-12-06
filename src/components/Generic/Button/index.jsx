@@ -2,7 +2,7 @@
 import React from "react";
 import "./style.scss";
 
-function Button({ onSubmit, buttonState }) {
+function Button({ onSubmit, buttonState, text }) {
   return (
     <button
       type="button"
@@ -10,8 +10,7 @@ function Button({ onSubmit, buttonState }) {
       onClick={onSubmit}
       className="Button"
     >
-      {" "}
-      Szukaj użytkownika
+      {text}
     </button>
   );
 }

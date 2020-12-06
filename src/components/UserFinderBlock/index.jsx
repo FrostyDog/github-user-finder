@@ -3,8 +3,9 @@ import "./style.scss";
 import { useSelector } from "react-redux";
 import LinkInput from "../LoginInput";
 import Alert from "../Generic/Alert";
-import AuthorInfo from "../AuthorDetails";
+import UserDetails from "../UserDetails";
 import ProjectListItem from "../ProjectListItem";
+import AboutGitFinder from "../AboutGitFinder";
 
 function UserFinderBlock() {
   const userNameObject = useSelector((state) => state.userNameObject);
@@ -14,15 +15,17 @@ function UserFinderBlock() {
   return (
     <div className="UserFinderBlock">
       <div className="UserFinderBlock__user">
-        {alertText ? <Alert text={alertText} /> : null}
-        <LinkInput />
         {Object.keys(userNameObject).length ? (
-          <AuthorInfo
+          <UserDetails
             publicRepos={userNameObject.public_repos}
             avatarUrl={userNameObject.avatar_url}
             login={userNameObject.login}
           />
         ) : null}
+        {alertText ? <Alert text={alertText} /> : null}
+        <LinkInput />
+
+        <AboutGitFinder />
       </div>
       <div className="UserFinderBlock__projects">
         {projectsWithCommits.map((el) => (
