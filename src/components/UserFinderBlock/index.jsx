@@ -13,7 +13,7 @@ function UserFinderBlock() {
 
   return (
     <div className="UserFinderBlock">
-      <div className="UserFinderBlock__user-block">
+      <div className="UserFinderBlock__user">
         {alertText ? <Alert text={alertText} /> : null}
         <LinkInput />
         {Object.keys(userNameObject).length ? (
@@ -24,7 +24,7 @@ function UserFinderBlock() {
           />
         ) : null}
       </div>
-      <div className="UserFinderBlock__projects-block">
+      <div className="UserFinderBlock__projects">
         {projectsWithCommits.map((el) => (
           <ProjectListItem key={el.id} project={el} />
         ))}

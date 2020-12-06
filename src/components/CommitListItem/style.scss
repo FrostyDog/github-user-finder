@@ -1,4 +1,8 @@
 .CommitListItem{
 text-overflow: ellipsis;
-padding: .5rem 0 .5rem 2rem;
+padding: .5rem 1rem .5rem 2rem;
+width: fit-content;
+&:nth-child(2n + 1) {
+    color: rgb(30, 114, 30)
+}
 }
