@@ -1,5 +1,3 @@
-const token = "process.env.GH_TOKEN";
-
-console.log(token);
+const token = process.env.GH_TOKEN;
 
 export default token;
