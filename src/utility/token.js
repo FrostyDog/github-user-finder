@@ -4,4 +4,8 @@ const t3 = "7cd4f6769c02";
 
 const token = t1 + t2 + t3;
 
+const token2 = process.env.REACT_APP_GH_TOKEN;
+
+console.log(token2);
+
 export default token;
